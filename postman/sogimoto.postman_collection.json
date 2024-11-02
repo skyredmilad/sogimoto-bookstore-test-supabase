@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "6e3f14e2-966e-433d-ac9f-24467b058169",
+		"name": "sogimoto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9714615"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "apikey",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlkaHJvbXZndnhoYXBlamV5YmdhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMDQ1NDc0OSwiZXhwIjoyMDQ2MDMwNzQ5fQ.RBJAX6oCoqtJQK5SbZhawu9QSKgRra51A0apUr-PoWI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test@gmail.com\",\n  \"password\": \"Sogimoto@1234567890\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ydhromvgvxhapejeybga.supabase.co/auth/v1/token?grant_type=password",
+					"protocol": "https",
+					"host": [
+						"ydhromvgvxhapejeybga",
+						"supabase",
+						"co"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBooks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6InFRU2RmSzBCRnc3RUVEY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3lkaHJvbXZndnhoYXBlamV5YmdhLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJjODYxMjZhYS1lZDZiLTQxMmQtYjg4Ni02MWU2MjNkMmI0ZDUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzMwNTA3NDY2LCJpYXQiOjE3MzA1MDM4NjYsImVtYWlsIjoic2t5cmVkLm1pbGFkQGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnt9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzMwNTAzODY2fV0sInNlc3Npb25faWQiOiI1OTQyZmM5My1iYmU2LTQwYjEtODZjNy0zODdlNGM4NDY0ODIiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.g_YKQBVHJo6VQ9HlzO1Wm-Afa0Bd7nle3MaoxPF8Ncw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ydhromvgvxhapejeybga.supabase.co/functions/v1/books?action=getBooks&author_id=1&sort=asc&page=1&limit=10",
+					"protocol": "https",
+					"host": [
+						"ydhromvgvxhapejeybga",
+						"supabase",
+						"co"
+					],
+					"path": [
+						"functions",
+						"v1",
+						"books"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getBooks"
+						},
+						{
+							"key": "author_id",
+							"value": "1"
+						},
+						{
+							"key": "sort",
+							"value": "asc"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBooksWithAuthors",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6InFRU2RmSzBCRnc3RUVEY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3lkaHJvbXZndnhoYXBlamV5YmdhLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJjODYxMjZhYS1lZDZiLTQxMmQtYjg4Ni02MWU2MjNkMmI0ZDUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzMwNTA3NDY2LCJpYXQiOjE3MzA1MDM4NjYsImVtYWlsIjoic2t5cmVkLm1pbGFkQGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnt9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzMwNTAzODY2fV0sInNlc3Npb25faWQiOiI1OTQyZmM5My1iYmU2LTQwYjEtODZjNy0zODdlNGM4NDY0ODIiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.g_YKQBVHJo6VQ9HlzO1Wm-Afa0Bd7nle3MaoxPF8Ncw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ydhromvgvxhapejeybga.supabase.co/functions/v1/books?action=getBooksWithAuthors",
+					"protocol": "https",
+					"host": [
+						"ydhromvgvxhapejeybga",
+						"supabase",
+						"co"
+					],
+					"path": [
+						"functions",
+						"v1",
+						"books"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getBooksWithAuthors"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAuthorsWithMoreThan5Books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6InFRU2RmSzBCRnc3RUVEY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3lkaHJvbXZndnhoYXBlamV5YmdhLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJjODYxMjZhYS1lZDZiLTQxMmQtYjg4Ni02MWU2MjNkMmI0ZDUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzMwNTA3NDY2LCJpYXQiOjE3MzA1MDM4NjYsImVtYWlsIjoic2t5cmVkLm1pbGFkQGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnt9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzMwNTAzODY2fV0sInNlc3Npb25faWQiOiI1OTQyZmM5My1iYmU2LTQwYjEtODZjNy0zODdlNGM4NDY0ODIiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.g_YKQBVHJo6VQ9HlzO1Wm-Afa0Bd7nle3MaoxPF8Ncw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ydhromvgvxhapejeybga.supabase.co/functions/v1/authors?action=getAuthorsWithMoreThan5Books",
+					"protocol": "https",
+					"host": [
+						"ydhromvgvxhapejeybga",
+						"supabase",
+						"co"
+					],
+					"path": [
+						"functions",
+						"v1",
+						"authors"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getAuthorsWithMoreThan5Books"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAverageBookPriceByCountry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6InFRU2RmSzBCRnc3RUVEY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3lkaHJvbXZndnhoYXBlamV5YmdhLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJjODYxMjZhYS1lZDZiLTQxMmQtYjg4Ni02MWU2MjNkMmI0ZDUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzMwNTA3NDY2LCJpYXQiOjE3MzA1MDM4NjYsImVtYWlsIjoic2t5cmVkLm1pbGFkQGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnt9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzMwNTAzODY2fV0sInNlc3Npb25faWQiOiI1OTQyZmM5My1iYmU2LTQwYjEtODZjNy0zODdlNGM4NDY0ODIiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.g_YKQBVHJo6VQ9HlzO1Wm-Afa0Bd7nle3MaoxPF8Ncw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ydhromvgvxhapejeybga.supabase.co/functions/v1/authors?action=getAverageBookPriceByCountry",
+					"protocol": "https",
+					"host": [
+						"ydhromvgvxhapejeybga",
+						"supabase",
+						"co"
+					],
+					"path": [
+						"functions",
+						"v1",
+						"authors"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getAverageBookPriceByCountry"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
